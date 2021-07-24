@@ -8,8 +8,8 @@ function App() {
   let [playerCounter2, setPlayerCounter2] = useState(10);
 
   const decrement = () => {
-    setPlayerCounter1(playerCounter1 - 1);
-    setPlayerCounter2(playerCounter2 - 1);
+    setPlayerCounter1((actual) => actual - 1);
+    setPlayerCounter2((actual) => actual - 1);
   };
 
   return (
@@ -21,7 +21,7 @@ function App() {
           <div className="incrementButton">
             <button
               onClick={() => {
-                setPlayerCounter1(playerCounter1 + 1);
+                setPlayerCounter1((actual) => actual + 1);
               }}
             >
               +
@@ -34,7 +34,7 @@ function App() {
           <div className="incrementButton">
             <button
               onClick={() => {
-                setPlayerCounter2(playerCounter2 + 1);
+                setPlayerCounter2((actual) => actual + 1);
               }}
             >
               +
@@ -43,6 +43,14 @@ function App() {
         </div>
         <div className="decrementButton">
           <button onClick={decrement}>-</button>
+          <button
+            onClick={() => {
+              setPlayerCounter1(10);
+              setPlayerCounter2(10);
+            }}
+          >
+            reset
+          </button>
         </div>
       </div>
     </div>
