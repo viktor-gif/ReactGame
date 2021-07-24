@@ -1,0 +1,52 @@
+.App {
+  text-align: center;
+  background-color: rgb(245, 218, 182);
+}
+
+.gameWrapper {
+  display: grid;
+  width: 80%;
+  margin: 10% auto;
+  grid-template-columns: 2, 1fr;
+  grid-template-rows: auto;
+  grid-column-gap: 3%;
+  grid-template-areas:
+    "first second"
+    "decrement decrement";
+}
+
+.firstGamer {
+  background-color: rgb(245, 218, 182);
+  grid-area: first;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.secondGamer {
+  background-color: rgb(245, 218, 182);
+  grid-area: second;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.incrementButton {
+  margin-top: 30%;
+  margin-bottom: 2%;
+}
+
+.decrementButton {
+  background-color: inherit;
+  grid-area: decrement;
+  margin-top: 5px;
+}
+
+.gamerName {
+  margin-top: 10%;
+  margin-bottom: 40%;
+  font-weight: bold;
+  font-size: 10px;
+}
+.gamerProgress {
+  font-weight: bold;
+  font-size: 30px;
+}
