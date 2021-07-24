@@ -2,8 +2,15 @@ import "./App.css";
 import React, { useState } from "react";
 
 function App() {
-  let playerCounter1 = useState(10);
-  let playerCounter2 = useState(10);
+  console.log("APP-RENDERING");
+
+  let [playerCounter1, setPlayerCounter1] = useState(10);
+  let [playerCounter2, setPlayerCounter2] = useState(10);
+
+  const decrement = () => {
+    setPlayerCounter1(playerCounter1 - 1);
+    setPlayerCounter2(playerCounter2 - 1);
+  };
 
   return (
     <div className="App">
@@ -12,18 +19,30 @@ function App() {
           <div className="gamerName">Иван Иванович</div>
           <div className="gamerProgress">{playerCounter1}</div>
           <div className="incrementButton">
-            <button>+</button>
+            <button
+              onClick={() => {
+                setPlayerCounter1(playerCounter1 + 1);
+              }}
+            >
+              +
+            </button>
           </div>
         </div>
         <div className="secondGamer">
           <div className="gamerName">Пётр петров</div>
           <div className="gamerProgress">{playerCounter2}</div>
           <div className="incrementButton">
-            <button>+</button>
+            <button
+              onClick={() => {
+                setPlayerCounter2(playerCounter2 + 1);
+              }}
+            >
+              +
+            </button>
           </div>
         </div>
         <div className="decrementButton">
-          <button>-</button>
+          <button onClick={decrement}>-</button>
         </div>
       </div>
     </div>
